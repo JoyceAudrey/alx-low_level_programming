@@ -5,26 +5,29 @@
  * starts from 00:00 to 23:59
  */
 void jack_bauer(void)
+
 {
-	int x, y;
+	int w, x, y, z;
 
-	x = 0;
-
-	while (x < 24)
+	for (w = 0; w <= 2; w++)
 	{
-		y = 0;
-		while (y < 60)
-		{
-			_putchar((x / 10) + '0');
-			_putchar((x % 10) + '0');
-			_putchar(':');
-			_putchar((y % 10) + '0');
-			_putchar((y % 10) + '0');
-			_putchar('\n');
-			y++;
-		}
-		x++;
-
-
+	for (x = 0; x <= 9; x++)
+	{
+	if ((w <= 1 && x <= 9) || (w <= 2 && x <= 3))
+	{
+	for (y = 0; y <= 5; y++)
+	{
+	for (z = 0; z <= 9; z++)
+	{
+	_putchar(w + '0');
+	_putchar(x + '0');
+	_putchar(58);
+	_putchar(y + '0');
+	_putchar(z + '0');
+	_putchar('\n');
+	}
+	}
+	}
+	}
 	}
 }
