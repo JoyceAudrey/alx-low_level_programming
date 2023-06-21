@@ -2,10 +2,9 @@
 /**
  * main - Entry point
  *
- * Description:  'This is the first task'
+ * Description: print _putchar
  *
- *Return: Always 0
- *
+ * Return: 0
  */
 
 int main(void)
@@ -21,4 +20,3 @@ int main(void)
 	_putchar('\n');
 	return (0);
 }
-
