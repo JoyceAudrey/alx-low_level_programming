@@ -7,9 +7,9 @@
  */
 void print_alphabet(void)
 {
-	int k;
+	char k = 97;
 
-	for (k = 97; k <= 122; k++)
+	while (k <= 122)
 	{
 		_putchar(k);
 	}
