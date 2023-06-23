@@ -2,8 +2,8 @@
 
 /**
  * _isupper - checks for uppercase character
- * @c: The character to be checked from ASCII table
- * Return: 1 if uppercase,0 if any else
+ * @c: The character in ASCII Table
+ * Return: 1 if uppercase, 0 otherwise
  */
 int _isupper(int c)
 {
