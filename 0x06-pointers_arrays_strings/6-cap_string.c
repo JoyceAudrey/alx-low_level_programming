@@ -1,45 +1,35 @@
-#include "main.h"
-#include <ctype.h>
-
 /**
- * *cap_string - function capitalizes all words of a string
- * @str: String character
- * Return: String
+ * cap_string - function capitalizes all words of a string.
+ * @s: string.
+ * Return: string.
  */
-char *cap_string(char *str)
+char *cap_string(char *s)
 {
-	int capitalize_next = 1;
-	char nots[] = ",;.!?(){}\n\t\" ";
-	int is_separator = 0;
 	int i;
-	int j;
 
-	for (i = 0; str[i] != '\0'; i++)
+	i = 0;
+	while (s[i] != '\0')
 	{
-		if (capitalize_next && islower(str[i]))
+		if ((s[i - 1] == ' ' || s[i - 1] == '\n'
+		|| s[i - 1] == '\t' || s[i - 1] == ','
+		|| s[i - 1] == ';' || s[i - 1] == '!'
+		|| s[i - 1] == '?' || s[i - 1] == '"'
+		|| s[i - 1] == '(' || s[i - 1] == ')'
+		|| s[i - 1] == '{' || s[i - 1] == '}'
+		|| s[i - 1] == '.')
+		&& (s[i] >= 'a' && s[i] <= 'z'))
 		{
-			str[i] = toupper(str[i]);
+			s[i] = s[i] - 32;
 		}
-
-		for (j = 0; nots[j] != '\0'; j++)
+		else if ((s[0] >= 97 && s[0] <= 122))
 		{
-			if (str[i] == nots[j])
-			{
-				is_separator = 1;
-				break;
-			}
-		}
-
-		if (is_separator)
-		{
-			capitalize_next = 1;
+			s[0] = s[0] - 32;
 		}
 		else
 		{
-			capitalize_next = 0;
+			s[i] = s[i];
 		}
+		i++;
 	}
-
-	return (str);
+	return (s);
 }
-
